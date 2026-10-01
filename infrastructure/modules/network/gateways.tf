@@ -28,8 +28,7 @@ resource "aws_nat_gateway" "nat" {
 
   # We will reference the first public subnet here once you create subnets.tf
   # subnet_id = aws_subnet.public[0].id 
-  subnet_id = var.public_subnet_id_for_nat # Placeholder until subnets are ready
-
+  subnet_id = aws_subnet.public[0].id # This references the first public subnet created in subnets.tf
   tags = {
     Name        = "${var.vpc_name}-nat"
     Environment = var.environment
