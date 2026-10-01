@@ -22,5 +22,13 @@ variable "public_subnet_id_for_nat" {
   default     = ""
 }
 
+variable "azs" {
+  description = "List of Availability Zones in the region"
+  type        = list(string)
+  default     = ["us-east-1a", "us-east-1b"]
+}
+
+
+
 
 
